@@ -12,4 +12,4 @@ spring:
           uri: https://github.com/RichardJd/microservices-spring/
           default-label: main
           search-paths:
-            - 'archives-config-server/greeting-service*'
+            - 'archives-config-server*/**'

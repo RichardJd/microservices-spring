@@ -10,5 +10,5 @@ management:
           - '*'
 
 greeting-service:
-  greeting: "Hello"
-  defaul-value: "World PRD"
+  greeting: "Olá"
+  defaul-value: "Mundo PRD"
