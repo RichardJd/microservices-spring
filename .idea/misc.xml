@@ -5,6 +5,7 @@
       <list>
         <option value="$PROJECT_DIR$/greeting-service/pom.xml" />
         <option value="$PROJECT_DIR$/rj-config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/cambio-service/pom.xml" />
       </list>
     </option>
   </component>
