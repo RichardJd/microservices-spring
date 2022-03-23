@@ -2,25 +2,34 @@ package br.com.rj.systems.cambioservice.model;
 
 import lombok.Data;
 
+import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
 @Data
+@Entity
 public class Cambio implements Serializable {
 
     @Serial
     private static final long serialVersionUID = -3076553482468455175L;
 
-    private final Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    private final String from;
+    @Column(name = "from_currency", nullable = false, length = 300)
+    private String from;
 
-    private final String to;
+    @Column(name = "to_currency", nullable = false, length = 300)
+    private String to;
 
-    private final BigDecimal conversionFactor;
+    @Column(nullable = false)
+    private BigDecimal conversionFactor;
 
-    private final BigDecimal convertedValue;
+    @Transient
+    private BigDecimal convertedValue;
 
-    private final String environment;
+    @Transient
+    private String environment;
 }
