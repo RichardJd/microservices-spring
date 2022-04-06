@@ -31,12 +31,10 @@ public class BookController {
         var book = bookRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Book not found"));
 
-
-
         var cambio = cambioProxy.getCambio(book.getPrice(), "USD", currency);
 
         var environmentPort = environment.getProperty("local.server.port");
-        book.setEnvironment(environmentPort);
+        book.setEnvironment("Book port: " + environmentPort + " Cambio port: " + cambio.environment());
         book.setPrice(cambio.convertedValue());
         return book;
     }
