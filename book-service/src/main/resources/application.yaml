@@ -5,6 +5,22 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
+resilience4j:
+  bulkhead:
+    instances:
+      default:
+        maxConcurrentCalls: 10
+  ratelimiter:
+    instances:
+      default:
+        limitForPeriod: 2
+        limitRefreshPeriod: 10s
+  retry:
+    instances:
+      foo-bar:
+        maxAttempts: 5
+        waitDuration: 1s
+        enableExponentialBackoff: true
 
 spring:
   application:
